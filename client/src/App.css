@@ -1,5 +1,12 @@
 @import url(https://fonts.google.com/specimen/Shadows+Into+Light?subset=latin);
  
+h1{
+  font-family: "Shadows Into Light";
+  font-size: 80px;
+  width: 500px;
+  text-align: right;
+  padding-left: 200px;
+}
   
 .App {
   text-align: right;
@@ -13,13 +20,7 @@
  background-size: cover;
 }
 
-h1{
-  font-family: "'Shadows Into Light'";
-  font-size: 80px;
-  width: 500px;
-  text-align: right;
-  padding-left: 200px;
-}
+
 
 .LandingImage{
   
