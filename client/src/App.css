@@ -1,38 +1,45 @@
+@import url(https://fonts.google.com/specimen/Shadows+Into+Light?subset=latin);
+ 
+  
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  text-align: right;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/001/739/534/non_2x/green-palm-tree-leaves-with-shadow-on-white-background-free-photo.JPG");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ background-repeat:repeat;
+ background-size: cover;
 }
 
-.App-link {
-  color: #61dafb;
+h1{
+  font-family: "'Shadows Into Light'";
+  font-size: 80px;
+  width: 500px;
+  text-align: right;
+  padding-left: 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.LandingImage{
+  
+  text-align: left;
 }
+p{
+  text-align: right;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  width: 640px;
+  
+}
+
+.SaveMySkinButton{
+    border: 2px solid rgb(137, 135, 134);
+    height: 40px;
+    width: 120px;
+    font-weight: bold;
+    display: inline-block;
+
+
+}
+
+

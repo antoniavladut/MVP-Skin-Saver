@@ -4,19 +4,25 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+    
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <img className = "LandingImage" src="https://o.remove.bg/downloads/2f8c8ce7-6ae9-4f8d-a188-0ee60ab42753/pexels-ron-lach-8128069-removebg-preview.png"></img>
+        <h1>
+          Get your skin in the game
+        </h1>
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        Skincare has seen an impressive boom in the last decade.
+But with so many available brands and formulas on the market, who knows which products are best for you?<br></br>
+<b>We do.</b>
+ <br></br>
+Take our SkinSaver™ quiz to find out which essential products best suit your skin type and budget, and create your personalized daytime skincare regimen.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+      <button className="SaveMySkinButton">
+        Save My Skin
+      </button>
       </header>
     </div>
   );
