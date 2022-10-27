@@ -19,7 +19,7 @@ con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 
-  let sql = fs.readFileSync(_dirname+"/init_db.sql").toString();
+  let sql = fs.readFileSync(__dirname+"/init_db.sql").toString();
 
 
   con.query(sql, function (err, result) {

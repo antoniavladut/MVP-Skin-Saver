@@ -5,10 +5,10 @@ CREATE TABLE products (
     productType VARCHAR(100),
     productName VARCHAR(100),
     brandName VARCHAR(100),
-    price money,
+    price DECIMAL(5,2)
 );
 
 INSERT INTO products (productType, productName, brandName, price)
 VALUES
-('Cleanser', 'BestCleanser', 'BestBrand', 100),
-('Sunscreen', 'WorstSunscreen', 'WorstBrand', 20);
+('Cleanser', 'BestCleanser', 'BestBrand', 80.51),
+('Sunscreen', 'WorstSunscreen', 'WorstBrand', 20.63);

@@ -1,12 +1,46 @@
-import React from "react";
+import React, {useState} from "react";
 import './QuizPage.css';
 
-function QuizPage(){
+const DEFAULT_FORM = {
+   skintype: "Oily",
+    budget: "Under"
+}
+
+function QuizPage(props){
+
+    //set default state of the choices?
+    const [choices, setChoices] = useState(DEFAULT_FORM);
+
+//when the input changed? no clue
+    const handleInputChange = (event) => {
+        //grab whatever value was selected
+        const name = event.target.name;
+        const value = event.target.value;
+        
+    //make that the property of my object
+        setChoices((state) => ({
+            ...state,
+            [name]: value}))
+        
+    };
+
 
     const handleSubmit = (e) => {
+        //prevents refresh
         e.preventDefault();
 
+        //confirmation message
         console.log("You have submitted your preferences!")
+
+        //resets radio buttons
+        // document.getElementById('Oily').checked=true;
+        // document.getElementById('Under').checked=true;
+
+        //saves the user's choices?
+        props.addChoices(choices);
+
+        // //resets the form?
+        setChoices(DEFAULT_FORM)
     }
 
 //usenavigate within the function
@@ -16,28 +50,28 @@ function QuizPage(){
 <div className="QuizBlock">
 <h2>Let's find out more about your skin!</h2>
 
-<div className="SkinTypeExamples">
+<div className="skintypeExamples">
 
-    <div class="Column">
+    <div className="Column">
     <p>If your skin often looks shiny or feels greasy, and shows concerns such as blackheads or enlarged pores, then you probably have OILY skin.</p>
     <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321090/close-up-of-a-womans-oily-skin.jpg"/>
 </div>
 
-<div class="Column">
+<div className="Column">
     <p>
         If your skin looks dull or feel tight, with dry areas where you notice your skin peeling, then you might have DRY skin.
     </p>
     <img src="https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/articles/cleanser-articles/facial-cleanser-dry-skin-600x400.jpg?rev=e7e676d972e3465fa25624be37336979"/>
 </div>
 
-<div class="Column">
+<div className="Column">
     <p>
         If you notice your T-zone (forehead, nose and chin) are oilier, and your cheeks are dryer, then you most likely have COMBINATION skin.
     </p>
     <img src="https://cdn.shopify.com/s/files/1/0284/9197/2692/articles/Untitled_design_44.png?v=1621271367"/>
 </div>
 
-<div class="Column">
+<div className="Column">
     <p>
         If it looks like your skin is well-balanced and doesn't display any persistent concerns, then your skin type is probably NORMAL.
     </p>
@@ -47,44 +81,52 @@ function QuizPage(){
 </div>
 
 
-<form class="SkincareForm" onSubmit={handleSubmit}>
+<form className="SkincareForm" onSubmit={handleSubmit}>
     
 
-    <div class="SkinTypeSelectors">
+    <div className="skintypeSelectors">
 
     <p>What is your skin type?</p>
 
-      <input type="radio" id="Oily" name="SkinType" value="Oily"
-             checked/>
-      <label for="Oily">Oily</label>
+      <input onChange={handleInputChange} type="radio" id="Oily" name="skintype" value="Oily"
+             defaultChecked/>
+      <label htmlFor="Oily">Oily</label>
     
 
     
-      <input type="radio" id="Dry" name="SkinType" value="Dry"/>
-      <label for="Dry">Dry</label>
+      <input onChange={handleInputChange}type="radio" id="Dry" name="skintype" value="Dry"/>
+      <label htmlFor="Dry">Dry</label>
 
 
   
-      <input type="radio" id="Combination" name="SkinType" value="Combination"/>
-      <label for="Combination">Combination</label>
+      <input onChange={handleInputChange} type="radio" id="Combination" name="skintype" value="Combination"/>
+      <label htmlFor="Combination">Combination</label>
 
 
  
-      <input type="radio" id="Normal" name="SkinType" value="Normal"/>
-      <label for="Normal">Normal</label>
+      <input onChange={handleInputChange} type="radio" id="Normal" name="skintype" value="Normal"/>
+      <label htmlFor="Normal">Normal</label>
     </div>
 
-    <div class="BudgetSelectors">
+    <div className="BudgetSelectors">
         
     <p>How much would you be willing to spend on one product?</p>
 
-      <input type="radio" id="Under" name="Budget" value="Under"
-             checked/>
-      <label for="Under">Under €20 </label>
+      <input onChange={handleInputChange}
+      type="radio"
+      id="Under"
+      name="budget"
+      value="Under"
+        defaultChecked/>
+      <label htmlFor="Under">Under €20 </label>
     
-      <input type="radio" id="Over" name="Budget" value="Over"
+      <input onChange={handleInputChange}
+      type="radio"
+      id="Over"
+      name="budget"
+      value="Over"
              />
-      <label for="Over">Over €20 </label>
+      <label htmlFor="Over">Over €20 </label>
 </div>
 
 <p>Great! That's all we need for now. Let's see which products suit you...</p>

@@ -20,6 +20,10 @@ function App() {
 
 const [products, setProducts] = useState(InitialProducts);
 
+const handleAddChoices = (newChoices) => {
+  setProducts((state) => [...state, newChoices]);
+};
+
   return (
 
     <div className="App">
@@ -29,13 +33,14 @@ const [products, setProducts] = useState(InitialProducts);
      <Routes>
       <Route path="/" element = {<LandingPage/>}/>
 
-      <Route path="/skinquiz" element = {<QuizPage/>}/>
+      <Route path="/skinquiz" element = {<QuizPage addChoices={(newChoices) => handleAddChoices(newChoices)}/>}/>
 
       <Route path="/products" element = {<ProductsPage productCount={products.length} products={products}/>}/>
      </Routes>
 
-     {/* <LandingPage/> */}
 
+
+     
       </div>
 
   );
