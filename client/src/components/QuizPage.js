@@ -3,6 +3,12 @@ import './QuizPage.css';
 
 function QuizPage(){
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log("You have submitted your preferences!")
+    }
+
 //usenavigate within the function
 //after clicking, redirect to results
 
@@ -41,7 +47,7 @@ function QuizPage(){
 </div>
 
 
-<form class="SkincareForm">
+<form class="SkincareForm" onSubmit={handleSubmit}>
     
 
     <div class="SkinTypeSelectors">
@@ -85,18 +91,8 @@ function QuizPage(){
 
 <button name="SubmitButton"> Find out my skincare regimen</button>
 
+
 </form>
-
-
-{/* <p> That's all the info we need for now!</p>
-
-
-    <button className="SubmitButton">Create my regimen</button> */}
-
-{/* </form> */}
-
-
-
 
 
 
@@ -105,3 +101,4 @@ function QuizPage(){
 }
 
 export default QuizPage;
+

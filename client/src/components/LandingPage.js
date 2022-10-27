@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
 import './LandingPage.css';
 
 function LandingPage(){
@@ -8,7 +9,7 @@ function LandingPage(){
 // const handleSubmit = (isQuizPage) => {
 //     setIsQuizPage(isQuizPage)
 
-//for landing page button: just wrap within the link to Quiz (react nav buttons)
+
 
 return(
     <div className = "LandingDiv">
@@ -24,12 +25,13 @@ But with so many available brands and formulas on the market, who knows which pr
  <br></br>
 Take our SkinSaver™ quiz to find out which essential products best suit your skin type and budget, and create your personalized daytime skincare regimen.
         </p>
-
+        <Link to="/skinquiz">
       <button className="SaveMySkinButton" 
-    //   onClick={() => handleSubmit(true)}
+    
       >
         Save My Skin
       </button>
+      </Link>
 
       </div>
 );

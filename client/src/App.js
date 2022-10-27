@@ -16,6 +16,8 @@ const InitialProducts = [
 
 function App() {
 
+// const [isLandingPage, setIsLandingPage] = useState (isLandingPage);
+
 const [products, setProducts] = useState(InitialProducts);
 
   return (
@@ -25,13 +27,14 @@ const [products, setProducts] = useState(InitialProducts);
   <NavBar/>
 
      <Routes>
-      <Route path="/home" element = {<LandingPage/>}/>
+      <Route path="/" element = {<LandingPage/>}/>
 
       <Route path="/skinquiz" element = {<QuizPage/>}/>
-      
+
       <Route path="/products" element = {<ProductsPage productCount={products.length} products={products}/>}/>
      </Routes>
-     
+
+     {/* <LandingPage/> */}
 
       </div>
 
