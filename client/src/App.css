@@ -1,7 +1,7 @@
 @import url(https://fonts.google.com/specimen/Shadows+Into+Light?subset=latin);
  
 h1{
-  font-family: "Shadows Into Light";
+  font-family: 'Shadows Into Light', sans-serif;
   font-size: 80px;
   width: 500px;
   text-align: right;
@@ -30,6 +30,7 @@ p{
   text-align: right;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 640px;
+  margin-right: 0;
   
 }
 

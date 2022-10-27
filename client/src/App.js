@@ -1,41 +1,42 @@
 import React, {useState} from 'react';
-import QuizPage from "./components/QuizPage";
 import './App.css';
+import NavBar from './components/NavBar';
+import {Routes, Route} from 'react-router-dom';
+
+
+import LandingPage from './components/LandingPage';
+import QuizPage from "./components/QuizPage";
+import ProductsPage from './components/ProductsPage';
+
+const InitialProducts = [
+  {id: 1, category: 'Cleanser', productName: 'Cleanser 1'},
+  {id: 2, category: 'Cleanser', productName: 'Cleanser 2'},
+  {id: 3, category: 'Moisturiser', productName: 'Moisturiser 1'},
+];
 
 function App() {
 
-const [isQuizPage, setIsQuizPage] = useState(true);
-
-const handleChangeView = (isQuizPage) => {
-  setIsQuizPage(isQuizPage);
-};
+const [products, setProducts] = useState(InitialProducts);
 
   return (
+
     <div className="App">
-      {isQuizPage ? <QuizPage/> : <App/>}
 
-      <header className="App-header">
-      <img className = "LandingImage" src="https://o.remove.bg/downloads/2f8c8ce7-6ae9-4f8d-a188-0ee60ab42753/pexels-ron-lach-8128069-removebg-preview.png"></img>
-        <h1>
-          Get your skin in the game
-        </h1>
+  <NavBar/>
 
-        <p>
-        Skincare has seen an impressive boom in the last decade.
-But with so many available brands and formulas on the market, who knows which products are best for you?<br></br>
-<b>We do.</b>
- <br></br>
-Take our SkinSaver™ quiz to find out which essential products best suit your skin type and budget, and create your personalized daytime skincare regimen.
-        </p>
+     <Routes>
+      <Route path="/home" element = {<LandingPage/>}/>
 
-      <button className="SaveMySkinButton" 
-      onClick={() => handleChangeView(true)}
-      >
-        Save My Skin
-      </button>
-      </header>
-    </div>
+      <Route path="/skinquiz" element = {<QuizPage/>}/>
+      
+      <Route path="/products" element = {<ProductsPage productCount={products.length} products={products}/>}/>
+     </Routes>
+     
+
+      </div>
+
   );
-}
+
+  }
 
 export default App;

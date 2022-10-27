@@ -1,3 +1,25 @@
 body{
     background-image: url("https://www.vecteezy.com/photo/1739534-green-palm-tree-leaves-with-shadow-on-white-background");
 }
+
+img{
+    width:100px;
+    height:100px;
+    
+}
+
+.SkinTypeExamples{
+    display: grid;
+    width: 800px;
+    background-color: white;
+    grid-template-columns: 200px;
+    column-count: 4;
+    column-width: 200px;
+    text-align: right;
+}
+
+.SkincareForm{
+    width: 800px;
+    background-color: white;
+    text-align: left;
+}
