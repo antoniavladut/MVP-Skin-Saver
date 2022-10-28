@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import './QuizPage.css';
 
 const DEFAULT_FORM = {
-   skintype: "Oily",
-   expense: "Under"
+   skintype: "",
+   expense: ""
 }
 
 function QuizPage(props){
@@ -35,7 +35,7 @@ function QuizPage(props){
     
         //saves the user's choices?
         //instead of addChoices = searchOnChoices
-        props.getProducts(choices);
+        props.getProductsCb(choices);
 
         // //resets the form?
         setChoices(DEFAULT_FORM)
@@ -82,47 +82,53 @@ function QuizPage(props){
 <form className="SkincareForm" onSubmit={handleSubmit}>
     
 
-    <div className="skintypeSelectors">
+    <div className="SkintypeSelectors">
 
     <p>What is your skin type?</p>
 
-      <input onChange={handleInputChange} type="radio" id="Oily" name="skintype" value={choices.skintype}
-             defaultChecked/>
+      <input onChange={handleInputChange} type="radio" id="Oily" name="skintype" value="Oily"
+    checked = {choices.skintype === "Oily"}
+             />
       <label htmlFor="Oily">Oily</label>
     
 
     
-      <input onChange={handleInputChange}type="radio" id="Dry" name="skintype" value={choices.skintype}/>
+      <input onChange={handleInputChange}type="radio" id="Dry" name="skintype" value="Dry"
+      checked = {choices.skintype === "Dry"}/>
       <label htmlFor="Dry">Dry</label>
 
 
   
-      <input onChange={handleInputChange} type="radio" id="Combination" name="skintype" value={choices.skintype}/>
+      <input onChange={handleInputChange} type="radio" id="Combination" name="skintype" value="Combination"
+      checked = {choices.skintype === "Combination"}/>
       <label htmlFor="Combination">Combination</label>
 
 
  
-      <input onChange={handleInputChange} type="radio" id="Normal" name="skintype" value={choices.skintype}/>
+      <input onChange={handleInputChange} type="radio" id="Normal" name="skintype" value="Normal"
+      checked = {choices.skintype === "Normal"}/>
       <label htmlFor="Normal">Normal</label>
     </div>
 
-    <div className="BudgetSelectors">
+    <div className="ExpenseSelectors">
         
     <p>How much would you be willing to spend on one product?</p>
 
       <input onChange={handleInputChange}
       type="radio"
-      id="Under"
-      name="budget"
-      value={choices.expense}
-        defaultChecked/>
+      id="Budget"
+      name="expense"
+      value="Budget"
+      checked = {choices.expense === "Budget"}
+        />
       <label htmlFor="Under"> Under €20 </label>
     
       <input onChange={handleInputChange}
       type="radio"
-      id="Over"
-      name="budget"
-      value={choices.expense}
+      id="Luxury"
+      name="expense"
+      value="Luxury"
+      checked = {choices.expense === "Luxury"}
              />
       <label htmlFor="Over"> Over €20 </label>
 </div>

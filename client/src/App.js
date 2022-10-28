@@ -7,32 +7,34 @@ import {Routes, Route} from 'react-router-dom';
 import LandingPage from './components/LandingPage';
 import QuizPage from "./components/QuizPage";
 import ResultsPage from './components/ResultsPage';
-import ProductsPage from './components/ProductsPage';
 
-// const InitialProducts = [
-//   {id: 1, category: 'Cleanser', productName: 'Cleanser 1'},
-//   {id: 2, category: 'Cleanser', productName: 'Cleanser 2'},
-//   {id: 3, category: 'Moisturiser', productName: 'Moisturiser 1'},
-// ];
 
-let PRODUCTS_URL = `http://localhost:5000/products?skinType="skintype"&expense="expense"`;
+
+
 
 function App() {
 
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  // async function pause(ms) {
+  //   return new Promise(resolve => setTimeout(resolve, ms));
 
   async function getProducts(choices) {
     //searchChoices
     // Reset state before a new fetch()
-    // setLoading(true);
-    // setError('');
-    // setProducts([]);
+    setLoading(true);
+    setError('');
+    setProducts([]);
 
     // Pause only to show that the "loading" message works
     // await pause(500);
 
+    let PRODUCTS_URL = `http://localhost:5000/products?skinType=${choices.skintype}&expense=${choices.expense}`;
+
+    // console.log(PRODUCTS_URL)
     try {  // "Try" an operation that might fail
         //when i do fetch I need to send with WHERE params in url
         //can get those params in initial_form
@@ -41,7 +43,8 @@ function App() {
         if (response.ok) {
             // Server received and understood my request
             let data = await response.json();  // wait again, for data
-            setProducts(data);  // update state
+            // console.log(data);
+            setFilteredProducts(data);  // update state
         } else {
             // Server received my request but can't fulfill it
             setError(`Server error: ${response.status} ${response.statusText}`);
@@ -57,9 +60,9 @@ function App() {
 
 // const [products, setProducts] = useState(InitialProducts);
 
-const handleGetProducts = (newChoices) => {
-  setProducts((state) => [...state, newChoices]);
-};
+// const handleGetProducts = (newChoices) => {
+//   setProducts((state) => [...state, newChoices]);
+
 
   return (
 
@@ -73,12 +76,10 @@ const handleGetProducts = (newChoices) => {
       <Route path="/" element = {<LandingPage/>}/>
 
 
-      <Route path="/skinquiz" element = {<QuizPage/>}    getProductsCb={choices => getProducts(choices)}/>
+      <Route path="/skinquiz" element = {<QuizPage getProductsCb={choices => getProducts(choices)}/>} />
    
 
-      <Route path="/products" element = {<ProductsPage productCount={products.length} products={products}/>}/>
-
-      <Route path="/results" element = {<ResultsPage />}/>
+      <Route path="/results" element = {<ResultsPage filteredProducts={filteredProducts} />}/>
 
      </Routes>
 
@@ -89,6 +90,7 @@ const handleGetProducts = (newChoices) => {
 
   );
 
-  }
+}
+  
 
 export default App;
