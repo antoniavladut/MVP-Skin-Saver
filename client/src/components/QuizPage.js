@@ -3,7 +3,7 @@ import './QuizPage.css';
 
 const DEFAULT_FORM = {
    skintype: "Oily",
-    budget: "Under"
+   expense: "Under"
 }
 
 function QuizPage(props){
@@ -32,12 +32,10 @@ function QuizPage(props){
         //confirmation message
         console.log("You have submitted your preferences!")
 
-        //resets radio buttons
-        // document.getElementById('Oily').checked=true;
-        // document.getElementById('Under').checked=true;
-
+    
         //saves the user's choices?
-        props.addChoices(choices);
+        //instead of addChoices = searchOnChoices
+        props.getProducts(choices);
 
         // //resets the form?
         setChoices(DEFAULT_FORM)
@@ -88,23 +86,23 @@ function QuizPage(props){
 
     <p>What is your skin type?</p>
 
-      <input onChange={handleInputChange} type="radio" id="Oily" name="skintype" value="Oily"
+      <input onChange={handleInputChange} type="radio" id="Oily" name="skintype" value={choices.skintype}
              defaultChecked/>
       <label htmlFor="Oily">Oily</label>
     
 
     
-      <input onChange={handleInputChange}type="radio" id="Dry" name="skintype" value="Dry"/>
+      <input onChange={handleInputChange}type="radio" id="Dry" name="skintype" value={choices.skintype}/>
       <label htmlFor="Dry">Dry</label>
 
 
   
-      <input onChange={handleInputChange} type="radio" id="Combination" name="skintype" value="Combination"/>
+      <input onChange={handleInputChange} type="radio" id="Combination" name="skintype" value={choices.skintype}/>
       <label htmlFor="Combination">Combination</label>
 
 
  
-      <input onChange={handleInputChange} type="radio" id="Normal" name="skintype" value="Normal"/>
+      <input onChange={handleInputChange} type="radio" id="Normal" name="skintype" value={choices.skintype}/>
       <label htmlFor="Normal">Normal</label>
     </div>
 
@@ -116,17 +114,17 @@ function QuizPage(props){
       type="radio"
       id="Under"
       name="budget"
-      value="Under"
+      value={choices.expense}
         defaultChecked/>
-      <label htmlFor="Under">Under €20 </label>
+      <label htmlFor="Under"> Under €20 </label>
     
       <input onChange={handleInputChange}
       type="radio"
       id="Over"
       name="budget"
-      value="Over"
+      value={choices.expense}
              />
-      <label htmlFor="Over">Over €20 </label>
+      <label htmlFor="Over"> Over €20 </label>
 </div>
 
 <p>Great! That's all we need for now. Let's see which products suit you...</p>
