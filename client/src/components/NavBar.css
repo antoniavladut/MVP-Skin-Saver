@@ -1,0 +1,12 @@
+.NavBar{
+    margin: 10px;
+    padding: 10px;
+   
+    word-spacing: 50px;
+}
+
+
+li{
+    margin: 10px;
+    list-style: none ;
+}

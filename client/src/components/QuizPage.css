@@ -1,6 +1,5 @@
-body{
-    background-image: url("https://www.vecteezy.com/photo/1739534-green-palm-tree-leaves-with-shadow-on-white-background");
-}
+
+
 
 img{
     width:100px;
@@ -8,18 +7,39 @@ img{
     
 }
 
-.SkinTypeExamples{
-    display: grid;
-    width: 800px;
-    background-color: white;
-    grid-template-columns: 200px;
-    column-count: 4;
-    column-width: 200px;
-    text-align: right;
+
+.QuizContainer{
+    
+    background-color:blanchedalmond;
+    text-align: center;
+
+    
 }
 
-.SkincareForm{
-    width: 800px;
-    background-color: white;
-    text-align: left;
+.col{
+    text-align: center;
+}
+
+.row{
+    text-align: center;
+}
+
+.QuizQuestions{
+    text-align: center;
+    margin-top: 10px;
+    text-decoration: underline;
+    font-size: 22px;
+}
+
+input{
+    margin-left: 10px;
+}
+
+label{
+    margin-left: 5px;
+}
+
+button{
+    font-weight: bold;
+
 }

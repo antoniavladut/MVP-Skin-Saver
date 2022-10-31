@@ -1,5 +1,9 @@
 import React, {useState} from "react";
 import './QuizPage.css';
+import ResultsPage from "./ResultsPage";
+import { useNavigate } from "react-router-dom";
+// import {Routes, Route, useNavigate} from 'react-router-dom';
+// import { useHistory } from "react-router-dom";
 
 const DEFAULT_FORM = {
    skintype: "",
@@ -10,6 +14,11 @@ function QuizPage(props){
 
     //set default state of the choices?
     const [choices, setChoices] = useState(DEFAULT_FORM);
+
+    const navigate = useNavigate();
+    //         //navigate to results
+    //         const navigateToResults = () => {
+    //             navigate('/results');};
 
 //when the input changed? no clue
     const handleInputChange = (event) => {
@@ -37,6 +46,9 @@ function QuizPage(props){
         //instead of addChoices = searchOnChoices
         props.getProductsCb(choices);
 
+        // history.push("/results");
+       navigate(`/results`);
+
         // //resets the form?
         setChoices(DEFAULT_FORM)
     }
@@ -45,38 +57,46 @@ function QuizPage(props){
 //after clicking, redirect to results
 
     return (
-<div className="QuizBlock">
+
+
+
+<div className="QuizContainer">
+
 <h2>Let's find out more about your skin!</h2>
 
-<div className="skintypeExamples">
+    <div className="row">
 
-    <div className="Column">
-    <p>If your skin often looks shiny or feels greasy, and shows concerns such as blackheads or enlarged pores, then you probably have OILY skin.</p>
-    <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321090/close-up-of-a-womans-oily-skin.jpg"/>
-</div>
+        <div className="col">If your skin often looks shiny or feels greasy, and shows concerns such as blackheads or enlarged pores, then you probably have OILY skin.
 
-<div className="Column">
-    <p>
+         <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321090/close-up-of-a-womans-oily-skin.jpg" />
+         </div>
+
+
+         <div className="col">
         If your skin looks dull or feel tight, with dry areas where you notice your skin peeling, then you might have DRY skin.
-    </p>
-    <img src="https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/articles/cleanser-articles/facial-cleanser-dry-skin-600x400.jpg?rev=e7e676d972e3465fa25624be37336979"/>
-</div>
 
-<div className="Column">
-    <p>
+        <img src="https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/articles/cleanser-articles/facial-cleanser-dry-skin-600x400.jpg?rev=e7e676d972e3465fa25624be37336979"/>
+        </div>
+
+
+        <div className="col">
         If you notice your T-zone (forehead, nose and chin) are oilier, and your cheeks are dryer, then you most likely have COMBINATION skin.
-    </p>
-    <img src="https://cdn.shopify.com/s/files/1/0284/9197/2692/articles/Untitled_design_44.png?v=1621271367"/>
-</div>
+        <img src="https://cdn.shopify.com/s/files/1/0284/9197/2692/articles/Untitled_design_44.png?v=1621271367"/>
+        </div>
 
-<div className="Column">
-    <p>
+
+         <div className="col">
         If it looks like your skin is well-balanced and doesn't display any persistent concerns, then your skin type is probably NORMAL.
-    </p>
-    <img src="https://images-us.nivea.com/-/media/florena-fs/local/gb/skincare-routine/ffs_it_fbarticlesskincare_digital_photo_tiredeffect_1200x900-screen.jpg"/>
-</div>
 
-</div>
+         <img src="https://images-us.nivea.com/-/media/florena-fs/local/gb/skincare-routine/ffs_it_fbarticlesskincare_digital_photo_tiredeffect_1200x900-screen.jpg"/>
+         </div>
+
+
+{/* row div */}
+    </div>
+
+
+
 
 
 <form className="SkincareForm" onSubmit={handleSubmit}>
@@ -84,7 +104,7 @@ function QuizPage(props){
 
     <div className="SkintypeSelectors">
 
-    <p>What is your skin type?</p>
+    <div className="QuizQuestions">What is your skin type?</div>
 
       <input onChange={handleInputChange} type="radio" id="Oily" name="skintype" value="Oily"
     checked = {choices.skintype === "Oily"}
@@ -112,7 +132,7 @@ function QuizPage(props){
 
     <div className="ExpenseSelectors">
         
-    <p>How much would you be willing to spend on one product?</p>
+    <div className="QuizQuestions">How much would you be willing to spend on each product?</div>
 
       <input onChange={handleInputChange}
       type="radio"
@@ -133,14 +153,18 @@ function QuizPage(props){
       <label htmlFor="Over"> Over €20 </label>
 </div>
 
-<p>Great! That's all we need for now. Let's see which products suit you...</p>
+<h3>Great! That's all we need for now. Let's see which products suit you...</h3>
 
-<button name="SubmitButton"> Find out my skincare regimen</button>
+<button name="SubmitButton" > Find out my skincare regimen</button>
 
+{/* onClick={navigateToResults} */}
 
 </form>
 
-
+    {/* <Routes>
+          <Route path="/results" element={<ResultsPage />} />
+         
+     </Routes> */}
 
 </div>
     );

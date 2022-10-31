@@ -1,11 +1,13 @@
 import React from "react";
+import './ResultsPage.css';
+
 
 function ResultsPage(props) {
 
 
 
     return (
-        <div>
+        <div className="ResultsContainer">
 <h2> Thank you for completing our quiz!</h2>
 <h3>Based on your answers, here are the 3 products that we recommend to create your 3-step morning skin regimen:</h3>
 
@@ -13,10 +15,32 @@ function ResultsPage(props) {
 {console.log(props.filteredProducts)} */}
 
 
-Cleanser:
+
 
 {props.filteredProducts.map(p => 
-    <li key={p.id}> {p.productName} </li>)}
+<li className="Results" key={p.id}>
+    For&nbsp;
+
+    <b>
+    {p.productType} </b>
+      use:
+
+    <br></br>
+
+    <div class="productInfo">
+    {p.productName}</div>
+     by &nbsp; 
+
+    <div class="productInfo">
+        {p.brandName}</div>
+   
+    
+    <em>
+    {p.descrip}</em>
+    
+    </li>
+    
+    )}
 
 
 {/* <p>{props.filteredProducts}</p> */}
