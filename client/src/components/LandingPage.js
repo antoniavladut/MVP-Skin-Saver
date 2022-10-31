@@ -1,24 +1,26 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import './LandingPage.css';
 
 function LandingPage(){
 
-// const [isLandingPage, setIsLandingPage] = useState (true);
-
-// const handleSubmit = (isQuizPage) => {
-//     setIsQuizPage(isQuizPage)
-
-
 
 return(
-    <div className = "LandingDiv">
-   
-        <h1>
-          Get your skin in the game
-        </h1>
 
-        <p>
+
+    <div className = "LandingGrid">
+
+
+  <div className="LandingImageDiv">
+    <img src="https://i.imgur.com/R5PvBZM.png" className="LandingImage"/>
+    </div>
+   
+   <div className="LandingText">
+        <h1>
+          Get your skin<br></br> in the game
+        </h1>
+<br></br>
+        <p className="LandingParagraph">
         Skincare has seen an impressive boom in the last decade.
 But with so many available brands and formulas on the market, who knows which products are best for you?<br></br>
 <b>We do.</b>
@@ -32,8 +34,10 @@ Take our SkinSaver™ quiz to find out which essential products best suit your s
         Save My Skin
       </button>
       </Link>
-
       </div>
+      </div>
+
+      
 );
 
 }

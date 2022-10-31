@@ -1,19 +1,29 @@
 .ResultsContainer{
-    background-color: rgb(250,235,215, 0.5);
+    background-color: rgb(250,235,215, 0.2);
     text-align: center;
-
 }
 
+.ResultsGrid{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+
+}
 .Results{
     padding:10px;
     text-align: center;
-    background-color: rgb(250,235,215, 0.5);
+    background-color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    border-left: 1px solid wheat;
+    border-bottom: 1px solid wheat;
+}
+
+.ResultsImages{
+    width: 400px;
+    height:500px;
 }
 
 .productInfo{
 font-weight: bold;
 }
 
-.productDescrip{
-    text-decoration: initial;
-}

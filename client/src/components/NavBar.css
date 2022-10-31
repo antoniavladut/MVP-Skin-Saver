@@ -1,12 +1,19 @@
 .NavBar{
     margin: 10px;
     padding: 10px;
-   
-    word-spacing: 50px;
+}
+
+.NavBar ul{
+    padding:10px;
+    list-style-type: none;
 }
 
 
-li{
+.NavBar li{
     margin: 10px;
-    list-style: none ;
+    list-style-type: none;
+}
+
+.navbar-nav{
+    font-size: 200px;
 }

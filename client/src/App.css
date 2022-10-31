@@ -1,57 +1,27 @@
 *{
   margin: 0;
   padding: 0;
-  
+
 }
 
 @import url(https://fonts.google.com/specimen/Shadows+Into+Light?subset=latin);
  
-h1{
-  font-family: 'Shadows Into Light', sans-serif;
-  font-size: 80px;
-  width: 500px;
-  text-align: right;
-  padding-left: 200px;
-}
+
   
 .App {
-  text-align: right;
-  
-  /* display: flex;
-  flex-direction: column; */
   align-items: center;
-  justify-content: center;
- 
+  text-align: center;
+  width: 1500px;
 }
 
 #root{
-  background-image: url("https://static.vecteezy.com/system/resources/previews/001/739/534/non_2x/green-palm-tree-leaves-with-shadow-on-white-background-free-photo.JPG");
+  background-image: url("https://static.vecteezy.com/system/resources/previews/001/739/534/non_2x/green-palm-tree-leaves-with-shadow-on-white-background-free-photo.JPG"); 
   min-height: 100vh;
+/* height: 500px; */
   background-repeat:repeat;
- background-size: cover;
+  background-size: cover;
 }
 
 
-.LandingImage{
-  
-  text-align: left;
-}
-p{
-  text-align: right;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  width: 640px;
-  margin-right: 0;
-  
-}
-
-.SaveMySkinButton{
-    border: 2px solid rgb(137, 135, 134);
-    height: 40px;
-    width: 120px;
-    font-weight: bold;
-    display: inline-block;
-
-
-}
 
 

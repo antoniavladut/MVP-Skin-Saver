@@ -66,29 +66,33 @@ function QuizPage(props){
 
     <div className="row">
 
-        <div className="col">If your skin often looks shiny or feels greasy, and shows concerns such as blackheads or enlarged pores, then you probably have OILY skin.
+        <div className="col">If your skin often looks shiny or feels greasy, and shows concerns such as blackheads or enlarged pores, then you probably have <b>OILY</b> skin.
 
-         <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321090/close-up-of-a-womans-oily-skin.jpg" />
+         <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321090/close-up-of-a-womans-oily-skin.jpg" 
+         className="SkinImages" />
          </div>
 
 
          <div className="col">
-        If your skin looks dull or feel tight, with dry areas where you notice your skin peeling, then you might have DRY skin.
+        If your skin looks dull or feel tight, with certain areas where you notice your skin feeling rugged or peeling, then you might have <b>DRY</b> skin.
 
-        <img src="https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/articles/cleanser-articles/facial-cleanser-dry-skin-600x400.jpg?rev=e7e676d972e3465fa25624be37336979"/>
+        <img src="https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/articles/cleanser-articles/facial-cleanser-dry-skin-600x400.jpg?rev=e7e676d972e3465fa25624be37336979"
+        className="SkinImages"/>
         </div>
 
 
         <div className="col">
-        If you notice your T-zone (forehead, nose and chin) are oilier, and your cheeks are dryer, then you most likely have COMBINATION skin.
-        <img src="https://cdn.shopify.com/s/files/1/0284/9197/2692/articles/Untitled_design_44.png?v=1621271367"/>
+        If you notice your T-zone (forehead, nose and chin) are oilier, and your cheeks are dryer, then you most likely have <b>COMBINATION</b> skin.
+        <img src="https://cdn.shopify.com/s/files/1/0284/9197/2692/articles/Untitled_design_44.png?v=1621271367"
+        className="SkinImages"/>
         </div>
 
 
          <div className="col">
-        If it looks like your skin is well-balanced and doesn't display any persistent concerns, then your skin type is probably NORMAL.
+        If it looks like your skin is well-balanced and doesn't display any persistent concerns, then your skin type is probably <b>NORMAL</b>.
 
-         <img src="https://images-us.nivea.com/-/media/florena-fs/local/gb/skincare-routine/ffs_it_fbarticlesskincare_digital_photo_tiredeffect_1200x900-screen.jpg"/>
+         <img src="https://images-us.nivea.com/-/media/florena-fs/local/gb/skincare-routine/ffs_it_fbarticlesskincare_digital_photo_tiredeffect_1200x900-screen.jpg"
+         className="SkinImages"/>
          </div>
 
 
@@ -96,7 +100,7 @@ function QuizPage(props){
     </div>
 
 
-
+<h3>Now based on the above...</h3>
 
 
 <form className="SkincareForm" onSubmit={handleSubmit}>
