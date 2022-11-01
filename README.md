@@ -1,12 +1,4 @@
 
-<a name="readme-top"></a>
-
-
-
-
-
-
-<br />
 <div align="center">
   <a href="https://github.com/antoniavladut/MVP-Skin-Saver">
     <img src="https://i.imgur.com/ZhlA2Ze.png" alt="Logo" width="270" height="300">
@@ -54,8 +46,6 @@
 </details>
 
 
-
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 SkinSaver is Antonia's MVP project for the CodeOp FS22 cohort.
@@ -77,7 +67,6 @@ It is a quiz where users input their skin type and budget, and get a list of 3 r
 
 
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple steps.
