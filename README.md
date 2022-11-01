@@ -134,7 +134,12 @@ Project Link: [https://github.com/antoniavladut/MVP-Skin-Saver](https://github.c
 * Maria: [https://github.com/mariallaverias](https://github.com/mariallaverias)
 * Pia: [https://github.com/piaprozesky](https://github.com/piaprozesky)
 
-### Thank you for all your help!
+### Thank you for all your help!<br><br>
+
+
+
+ _This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
