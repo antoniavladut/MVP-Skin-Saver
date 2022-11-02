@@ -13,10 +13,7 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (productType, productName, brandName, skinType, expense, price, descrip, img)
-
 VALUES
-
-
 
 -- 1
 ('Cleanser','Hydrating Facial Cleanser (236ml)','CeraVe','Dry','Budget',7.95,'This hydrating  formula contains essential ceramides and hyaluronic acid, removing dirt and oil while increasing the  moisture levels of your skin.', 'https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/skincare/cleansers/hydrating-facial-cleanser/photos/2022/700x875/cerave_daily_hydrating-cleanser_12oz_front-700x875-v2.jpg?rev=e1fd9f48b18343ab9d2931e0cd92793c'),
