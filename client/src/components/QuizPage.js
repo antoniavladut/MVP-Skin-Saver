@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import './QuizPage.css';
-import ResultsPage from "./ResultsPage";
 import { useNavigate } from "react-router-dom";
 
 
@@ -62,7 +61,7 @@ return (
             <div className="col">
             If your skin looks dull or feel tight, with certain areas where you notice your skin feeling rugged or peeling, then you might have <b>DRY</b> skin.
 
-            <img src="https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/articles/cleanser-articles/facial-cleanser-dry-skin-600x400.jpg?rev=e7e676d972e3465fa25624be37336979"
+            <img src="https://www.cerave.com/-/media/project/loreal/brand-sites/cerave/americas/us/old-image-path/articles/cleanser-articles/facial-cleanser-dry-skin-600x400.jpg?rev=e7e676d972e3465fa25624be37336979"
             className="SkinImages"/>
             </div>
 
@@ -85,7 +84,7 @@ return (
 
     </div>
 
-
+{/* SHOWCASE CODE */}
 <h3>Now based on the above...</h3>
 
 
@@ -143,7 +142,7 @@ return (
       <label htmlFor="Over"> Over €20 </label>
     </div>
 
-    <h3>Great! That's all we need for now. Let's see which products suit you...</h3>
+ <h3>Great! That's all we need for now. Let's see which products suit you...</h3>
 
     <button name="SubmitButton" > Find out my skincare regimen</button>
 

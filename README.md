@@ -39,7 +39,7 @@
       </ul>
     </li>
     <li><a href="#database">Database</a></li>
-    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contributing">Contributing & Extra Features</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -100,15 +100,25 @@ Below you can find the database schema for this project:
 
 ![Database schema:](https://i.imgur.com/OqGnXhe.png)
 
+### Instalation
+
+1. Create database 'recommendations'
+2. Create table 'product' (from .env file)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Contributing
+## Contributing & Extra Features
 
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have a suggestion that would make this better, please fork the repo and create a pull request. Some possible extra features are:
+* links to purchase recommended products;
+* search function (by skin type, by budget etc.)
+* map to nearby cosmetics store based on the user’s location;
+* extra skincare advice based on the user’s choices;
+<br><br>
 
+### Instructions:
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)

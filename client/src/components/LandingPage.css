@@ -5,7 +5,9 @@
 .LandingImage{
 object-fit: contain;
 margin: auto;
-
+width: 600px;
+height: 800px;
+margin-bottom: 200px;
 }
 
 
